@@ -9,14 +9,14 @@
 import Foundation
 import SQLite
 public protocol SWSQLProtocol {
-    var sqlBase:SQLBase {get}
+    var sqlBase:SWSQLBase {get}
     var tableName:String? {get set}
     var table:Table? {get set}
     func createTable() -> Table?
 }
 extension SWSQLProtocol {
-    public var sqlBase: SQLBase{
-        return SQLBase.default
+    public var sqlBase: SWSQLBase{
+        return SWSQLBase.default
     }
 }
 extension SWSQLProtocol {
