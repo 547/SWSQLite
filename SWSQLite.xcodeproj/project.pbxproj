@@ -11,6 +11,8 @@
 		E684507622BB622A000BF665 /* SWSQLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E684506C22BB622A000BF665 /* SWSQLite.framework */; };
 		E684507B22BB622A000BF665 /* SWSQLiteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E684507A22BB622A000BF665 /* SWSQLiteTests.swift */; };
 		E684507D22BB622A000BF665 /* SWSQLite.h in Headers */ = {isa = PBXBuildFile; fileRef = E684506F22BB622A000BF665 /* SWSQLite.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E684508722BB64E9000BF665 /* SQLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E684508622BB64E9000BF665 /* SQLProtocol.swift */; };
+		E684508922BB66AD000BF665 /* SQLBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E684508822BB66AD000BF665 /* SQLBase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +35,8 @@
 		E684507522BB622A000BF665 /* SWSQLiteTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SWSQLiteTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E684507A22BB622A000BF665 /* SWSQLiteTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWSQLiteTests.swift; sourceTree = "<group>"; };
 		E684507C22BB622A000BF665 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E684508622BB64E9000BF665 /* SQLProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SQLProtocol.swift; sourceTree = "<group>"; };
+		E684508822BB66AD000BF665 /* SQLBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLBase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +90,8 @@
 		E684506E22BB622A000BF665 /* SWSQLite */ = {
 			isa = PBXGroup;
 			children = (
+				E684508622BB64E9000BF665 /* SQLProtocol.swift */,
+				E684508822BB66AD000BF665 /* SQLBase.swift */,
 				E684506F22BB622A000BF665 /* SWSQLite.h */,
 				E684507022BB622A000BF665 /* Info.plist */,
 			);
@@ -107,7 +113,6 @@
 				D9D64702E256877E81492B7A /* Pods-SWSQLite.debug.xcconfig */,
 				BE6913C5075DF34808A946E6 /* Pods-SWSQLite.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -174,6 +179,7 @@
 				TargetAttributes = {
 					E684506B22BB622A000BF665 = {
 						CreatedOnToolsVersion = 10.2.1;
+						LastSwiftMigration = 1020;
 					};
 					E684507422BB622A000BF665 = {
 						CreatedOnToolsVersion = 10.2.1;
@@ -245,6 +251,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E684508722BB64E9000BF665 /* SQLProtocol.swift in Sources */,
+				E684508922BB66AD000BF665 /* SQLBase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -393,6 +401,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D9D64702E256877E81492B7A /* Pods-SWSQLite.debug.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -411,6 +420,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.Seven.SWSQLite;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -420,6 +430,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BE6913C5075DF34808A946E6 /* Pods-SWSQLite.release.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -446,6 +457,7 @@
 		E684508422BB622A000BF665 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GTWT2P766B;
 				INFOPLIST_FILE = SWSQLiteTests/Info.plist;
@@ -464,6 +476,7 @@
 		E684508522BB622A000BF665 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GTWT2P766B;
 				INFOPLIST_FILE = SWSQLiteTests/Info.plist;
