@@ -1,25 +1,25 @@
 //
-//  SQLProtocol.swift
-//  iFoodMacau-Delivery
+//  SWSQLProtocol.swift
+//  SWSQLite
 //
-//  Created by seven on 2017/8/13.
-//  Copyright © 2017年 Supernova Software. All rights reserved.
+//  Created by Supernova SanDick SSD on 2019/6/20.
+//  Copyright © 2019 Seven. All rights reserved.
 //
 
 import Foundation
 import SQLite
-public protocol SQLProtocol {
+public protocol SWSQLProtocol {
     var sqlBase:SQLBase {get}
     var tableName:String? {get set}
     var table:Table? {get set}
     func createTable() -> Table?
 }
-extension SQLProtocol {
+extension SWSQLProtocol {
     public var sqlBase: SQLBase{
         return SQLBase.default
     }
 }
-extension SQLProtocol {
+extension SWSQLProtocol {
     @discardableResult
     public func add(inster:Insert) -> Int? {
         guard let db = sqlBase.dataBase else { return nil }

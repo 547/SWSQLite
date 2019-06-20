@@ -1,5 +1,5 @@
 //
-//  SQLBase.swift
+//  SWSQLBase.swift
 //  SWSQLite
 //
 //  Created by Supernova SanDick SSD on 2019/6/20.
@@ -8,14 +8,14 @@
 
 import Foundation
 import SQLite
-public class SQLBase {
-    public static let `default` = SQLBase()
+public class SWSQLBase {
+    public static let `default` = SWSQLBase()
     public var dataPath: String? {
         guard let path = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first else { return nil }
         return path + "/db.sqlite3"
     }
     public lazy var dataBase: Connection? = {
-        return SQLBase.default.createDataBase()
+        return SWSQLBase.default.createDataBase()
     }()
     private func createDataBase() -> Connection? {
         do {
@@ -41,7 +41,7 @@ public class SQLBase {
     }
     
 }
-extension SQLBase {
+extension SWSQLBase {
     public func disposeDataBase() -> () {
         let key = "CFBundleVersion"
         guard let currentBuild = Bundle.main.infoDictionary?[key] as? String else {
