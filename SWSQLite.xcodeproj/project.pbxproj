@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		147C78D426FFB919DDA2FC8A /* Pods_SWSQLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE50EDDB66A19FE589A4DB87 /* Pods_SWSQLite.framework */; };
 		E684507622BB622A000BF665 /* SWSQLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E684506C22BB622A000BF665 /* SWSQLite.framework */; };
 		E684507B22BB622A000BF665 /* SWSQLiteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E684507A22BB622A000BF665 /* SWSQLiteTests.swift */; };
 		E684507D22BB622A000BF665 /* SWSQLite.h in Headers */ = {isa = PBXBuildFile; fileRef = E684506F22BB622A000BF665 /* SWSQLite.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -23,6 +24,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AE50EDDB66A19FE589A4DB87 /* Pods_SWSQLite.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SWSQLite.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BE6913C5075DF34808A946E6 /* Pods-SWSQLite.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SWSQLite.release.xcconfig"; path = "Target Support Files/Pods-SWSQLite/Pods-SWSQLite.release.xcconfig"; sourceTree = "<group>"; };
+		D9D64702E256877E81492B7A /* Pods-SWSQLite.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SWSQLite.debug.xcconfig"; path = "Target Support Files/Pods-SWSQLite/Pods-SWSQLite.debug.xcconfig"; sourceTree = "<group>"; };
 		E684506C22BB622A000BF665 /* SWSQLite.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SWSQLite.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E684506F22BB622A000BF665 /* SWSQLite.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SWSQLite.h; sourceTree = "<group>"; };
 		E684507022BB622A000BF665 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -36,6 +40,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				147C78D426FFB919DDA2FC8A /* Pods_SWSQLite.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -50,12 +55,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4DEEF5D0E2279E2AFD9392F1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AE50EDDB66A19FE589A4DB87 /* Pods_SWSQLite.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		E684506222BB622A000BF665 = {
 			isa = PBXGroup;
 			children = (
 				E684506E22BB622A000BF665 /* SWSQLite */,
 				E684507922BB622A000BF665 /* SWSQLiteTests */,
 				E684506D22BB622A000BF665 /* Products */,
+				F260A05CF84FD73E938921F4 /* Pods */,
+				4DEEF5D0E2279E2AFD9392F1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -86,6 +101,16 @@
 			path = SWSQLiteTests;
 			sourceTree = "<group>";
 		};
+		F260A05CF84FD73E938921F4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D9D64702E256877E81492B7A /* Pods-SWSQLite.debug.xcconfig */,
+				BE6913C5075DF34808A946E6 /* Pods-SWSQLite.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -104,6 +129,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E684508022BB622A000BF665 /* Build configuration list for PBXNativeTarget "SWSQLite" */;
 			buildPhases = (
+				D1AD58A263BCE28428AD7F6A /* [CP] Check Pods Manifest.lock */,
 				E684506722BB622A000BF665 /* Headers */,
 				E684506822BB622A000BF665 /* Sources */,
 				E684506922BB622A000BF665 /* Frameworks */,
@@ -188,6 +214,31 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		D1AD58A263BCE28428AD7F6A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SWSQLite-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E684506822BB622A000BF665 /* Sources */ = {
@@ -340,6 +391,7 @@
 		};
 		E684508122BB622A000BF665 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D9D64702E256877E81492B7A /* Pods-SWSQLite.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
@@ -350,6 +402,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = SWSQLite/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -365,6 +418,7 @@
 		};
 		E684508222BB622A000BF665 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BE6913C5075DF34808A946E6 /* Pods-SWSQLite.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
@@ -375,6 +429,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = SWSQLite/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
